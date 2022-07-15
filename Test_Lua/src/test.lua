@@ -7,8 +7,10 @@
 
 local useful = require("useful")
 
-local x = ""
-print(x=="")
+local x = "age"
+local info = {}
+info.age = 10
+print(info[x])
 
 
 
