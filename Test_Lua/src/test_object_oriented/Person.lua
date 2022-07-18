@@ -10,33 +10,25 @@ local Person = {name="无名",ismale=true,age=-1}
 Person.__index = Person
 
 -- 对象构造方法
-function Person.new(name,ismale,age)
+function Person.new(info)
     local object = {}
     setmetatable(object,Person)
-    -- 在元表中找到父类的ctor进行属性赋值
-    object:ctor(name,ismale,age)
+    -- 属性赋值
+    for k,v in pairs(info) do
+        object[k]=v
+    end
+    print("构造完成\n")
     return object
 end
 
--- 属性赋值
-function Person:ctor(name,ismale,age)
-    if name~=nil then
-        self.name = name
-    end
-    if ismale~=nil then
-        self.ismale = ismale
-    end
-    if age~=nil then
-        self.age = age
-    end
-end
-
-function Person:get(k,v)
+function Person:get(k)
     return self[k]
 end
-
 function Person:set(k,v)
     self[k] = v
+end
+function Person:print(k)
+    print(self[k])
 end
 
 return Person

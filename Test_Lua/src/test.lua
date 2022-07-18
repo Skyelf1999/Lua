@@ -7,10 +7,10 @@
 
 local useful = require("useful")
 
-local info = {}
-info.age = 10
-info.name = "dsh"
-info.game = "DotA"
+local info = {age=18,name="dsh",game="DotA"}
+--info.age = 10
+--info.name = "dsh"
+--info.game = "DotA"
 
 local new = {}
 for k,v in pairs(info) do

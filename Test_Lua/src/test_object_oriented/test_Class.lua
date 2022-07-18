@@ -7,5 +7,6 @@
 require("structure")
 local Person = require("test_object_oriented.Person")
 
-local dsh = Person.new("dsh",true,22)
-print(dsh:get("age"))
+local info = {name="dsh",ismale=true,age=22}
+local dsh = Person.new(info)
+dsh:print("age")
