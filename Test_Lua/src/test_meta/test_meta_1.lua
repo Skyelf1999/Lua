@@ -10,10 +10,12 @@ require("structure")
 Set = {}
 local metatable_Set = {}   -- 元表
 
--- 创建新的集合，处于集合中的元素表现为：set[data]=true
+-- 创建新的集合
 function Set.new(l)
     local set = {}
-    setmetatable(set, metatable_Set)    -- 将mt设置为当前所创建的table的元表
+    -- 将mt设置为当前所创建的table的元表
+    setmetatable(set, metatable_Set)
+    -- 为便于判断是否包含目标元素，处于集合中的元素表现为：set[data]=true
     for _,v in ipairs(l) do
         set[v] = true
     end
@@ -45,22 +47,23 @@ function Set.tostring(set)
     end
     return "{" .. table.concat(l,",") .. "}"
 end
-function Set.print(s)
-    print(Set.tostring(s))
+function Set.print()
+    print(Set:tostring())
 end
 
 
 ------------------------------- 算数类的元方法 -------------------------------
 structure.Func_type("算数类的元方法",true)
 
--- 元方法
+-- 元方法：加法-->求并集，乘法-->求交集
 metatable_Set.__add = Set.union
 metatable_Set.__mul = Set.intersection
+metatable_Set.__tostring = Set.tostring()
 
 set_1 = Set.new{1,2,3}
 set_2 = Set.new{2,3,4}
 -- 根据new方法，二者具有相同的元表mt
-print(getmetatable(set_1),getmetatable(set_2))
+print(getmetatable(set_1)==getmetatable(set_2))
 -- 测试元方法
 Set.print(set_1 + set_2)
 Set.print(set_1 * set_2)
@@ -94,6 +97,11 @@ end
 structure.Func_type("关系类的元方法",false)
 ------------------------------- 关系类的元方法 -------------------------------
 
+
+------------------------------- 修改已有元方法 -------------------------------
+structure.Func_type("修改已有元方法",true)
+
+local a = {name="dsh",age="23",games="DotA"}
 
 
 

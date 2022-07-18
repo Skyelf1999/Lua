@@ -7,25 +7,21 @@
 
 local useful = require("useful")
 
-local x = "age"
 local info = {}
 info.age = 10
 info.name = "dsh"
-table.insert(info,3,12)
-local test = info
-info.name = nil
+table.insert(info,3,"DotA")
 
-for i,v in pairs(test) do
+for i,v in pairs(info) do
     print(i,v)
 end
 
+local mt = {}
+mt.k = "测试"
+--mt.__index = function(table,key)
+--    return key.."对应的值不存在"
+--end
+mt.__index = mt
+setmetatable(info,mt)
 
-
-
-
-
-
-
-
-
-
+print(info.k)
