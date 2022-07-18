@@ -10,7 +10,16 @@ local useful = require("useful")
 local x = "age"
 local info = {}
 info.age = 10
-print(info[x])
+info.name = "dsh"
+table.insert(info,3,12)
+local test = info
+info.name = nil
+
+for i,v in pairs(test) do
+    print(i,v)
+end
+
+
 
 
 
