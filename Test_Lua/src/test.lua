@@ -10,18 +10,14 @@ local useful = require("useful")
 local info = {}
 info.age = 10
 info.name = "dsh"
-table.insert(info,3,"DotA")
+info.game = "DotA"
 
-for i,v in pairs(info) do
-    print(i,v)
+local new = {}
+for k,v in pairs(info) do
+    new[k] = v
 end
 
-local mt = {}
-mt.k = "测试"
---mt.__index = function(table,key)
---    return key.."对应的值不存在"
---end
-mt.__index = mt
-setmetatable(info,mt)
-
-print(info.k)
+--info = nil
+for k,v in pairs(new) do
+    print(k,v)
+end

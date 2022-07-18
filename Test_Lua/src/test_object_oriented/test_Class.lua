@@ -8,4 +8,4 @@ require("structure")
 local Person = require("test_object_oriented.Person")
 
 local dsh = Person.new("dsh",true,22)
-print(dsh:get("name"))
+print(dsh:get("age"))

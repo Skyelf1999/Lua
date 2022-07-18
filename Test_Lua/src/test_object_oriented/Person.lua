@@ -6,8 +6,19 @@
 
 require("structure")
 
-local Person = class("Person")
+local Person = {name="无名",ismale=true,age=-1}
+Person.__index = Person
 
+-- 对象构造方法
+function Person.new(name,ismale,age)
+    local object = {}
+    setmetatable(object,Person)
+    -- 在元表中找到父类的ctor进行属性赋值
+    object:ctor(name,ismale,age)
+    return object
+end
+
+-- 属性赋值
 function Person:ctor(name,ismale,age)
     if name~=nil then
         self.name = name
