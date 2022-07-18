@@ -4,9 +4,30 @@
 --- DateTime: 2022/7/15 16:54
 ---
 
-require("structure")
-local Person = require("test_object_oriented.Person")
+local Func_type = require("structure").Func_type
 
-local info = {name="dsh",ismale=true,age=22}
-local dsh = Person.new(info)
-dsh:print("age")
+
+--Func_type("构造对象",true)
+--
+--local Person = require("test_object_oriented.Person")
+--local info = {name="dsh",ismale=true,age=22,x="???"}
+--local dsh = Person:new(info)
+--dsh:print("name")
+--
+--Func_type("构造对象",false)
+
+
+
+Func_type("子类继承",true)
+
+local Player = require("test_object_oriented.Player")
+local info = {name="dsh",ismale=true,age=22,game="MHR"}
+local player_dsh = Player:new(info)
+player_dsh:print("game")
+player_dsh:selfIntroduce()
+
+Func_type("子类继承",false)
+
+
+
+

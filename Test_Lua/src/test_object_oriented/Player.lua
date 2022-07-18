@@ -7,26 +7,34 @@
 local Person = require("test_object_oriented.Person")
 
 -- 继承
-local Player = Person.new()
+local Player = Person:new()
+Player.game = "玩家身份"    -- 新属性
 Player.__index = Player
 
--- 重写构造方法
-function Player.new(name,ismale,age,game)
+
+---- 构造方法
+function Player:new(info)
     local object = {}
-    setmetatable(object,Player)
+    self:init(info,object)
+    setmetatable(object,self)
     return object
 end
 
-function Player:ctor(info)
-    for k,v in pairs(info) do
-        self.k = v
+-- 新方法
+function Player:selfIntroduce()
+    local sex
+    if self.ismale then
+        sex = "男"
+    else
+        sex = "女"
     end
+    local info = {
+        "我是"..self.name,
+        "性别为"..sex,
+        "今年"..self.age.."岁",
+        "喜欢的游戏为"..self.game
+    }
+    print(table.concat(info,"，"))
 end
 
-function Player:print()
-    for k,v in pairs(self) do
-        if type(v)~="table" then
-            print(k,v)
-        end
-    end
-end
+return Player

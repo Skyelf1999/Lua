@@ -6,21 +6,35 @@
 
 require("structure")
 
+-- 属性初始化
 local Person = {name="无名",ismale=true,age=-1}
 Person.__index = Person
 
 -- 对象构造方法
-function Person.new(info)
+function Person:new(info)
     local object = {}
+    self:init(info,object)
     setmetatable(object,Person)
-    -- 属性赋值
-    for k,v in pairs(info) do
-        object[k]=v
-    end
-    print("构造完成\n")
+    --print("构造完成\n")
     return object
 end
 
+function Person:init(info,object)
+    -- 属性赋值（避免无效属性）
+    if info~=nil then
+        for k,v in pairs(info) do
+            if self[k]~=nil then
+                object[k]=v
+            else
+                print("父类不含有属性"..k)
+            end
+        end
+    --else
+    --    print("属性使用默认值")
+    end
+end
+
+-- 属性相关方法
 function Person:get(k)
     return self[k]
 end
