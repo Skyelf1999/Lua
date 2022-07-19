@@ -23,16 +23,23 @@ end
 -- 新方法
 function Player:playerIntroduce()
     local sex
+    local game
     if self.ismale then
         sex = "男"
     else
         sex = "女"
     end
+    if type(self.game)=="table" then
+        print("有多种游戏")
+        game = table.concat(self.game,"、")
+    else
+        game = self.game
+    end
     local info = {
         "我是"..self.name,
         "性别为"..sex,
         "今年"..self.age.."岁",
-        "喜欢的游戏为"..self.game
+        "喜欢的游戏是"..game
     }
     print(table.concat(info,"，"))
 end
