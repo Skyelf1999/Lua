@@ -21,7 +21,7 @@ function Player:new(info)
 end
 
 -- 新方法
-function Player:selfIntroduce()
+function Player:playerIntroduce()
     local sex
     if self.ismale then
         sex = "男"

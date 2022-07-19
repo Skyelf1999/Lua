@@ -24,7 +24,7 @@ local Player = require("test_object_oriented.Player")
 local info = {name="dsh",ismale=true,age=22,game="MHR"}
 local player_dsh = Player:new(info)
 player_dsh:print("game")
-player_dsh:selfIntroduce()
+player_dsh:playerIntroduce()
 
 Func_type("子类继承",false)
 
