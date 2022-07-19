@@ -42,6 +42,8 @@ b = new_pAccount(100)
 print("无私有性的账户余额：" .. a.balance)
 --print("有私有性的账户余额" .. b.balance)
 print("有私有性的账户余额：" .. b.getBalance())
+b.cost(15)
+print(b.getBalance())
 
 
 

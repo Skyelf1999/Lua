@@ -19,8 +19,8 @@ function Person:new(info)
     return object
 end
 
+-- 属性赋值（避免无效属性）
 function Person:init(info,object)
-    -- 属性赋值（避免无效属性）
     if info~=nil then
         for k,v in pairs(info) do
             if self[k]~=nil then
