@@ -28,6 +28,18 @@ player_dsh:playerIntroduce()
 
 Func_type("子类继承",false)
 
+-------------------------------------------------------------------
+
+Func_type("多重继承",true)
+
+local Employee = require("test_object_oriented.Employee")
+info = {name="dsh",ismale=true,age=22,
+        game= { "MHR","DotA","TitanFall" },school="北京科技大学",company="巴别时代"}
+local employee_dsh = Employee:new(info)
+employee_dsh:print("school")
+employee_dsh:employeeIntroduce()
+
+Func_type("多重继承",false)
 
 
 
