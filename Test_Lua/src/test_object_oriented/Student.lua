@@ -4,6 +4,8 @@
 --- DateTime: 2022/7/19 15:23
 ---
 
+
+-- 父类
 local Person = require("test_object_oriented.Person")
 
 -- 继承
@@ -32,7 +34,10 @@ function Student:studentIntroduce()
         "我是"..self.name,
         "性别为"..sex,
         "今年"..self.age.."岁",
-        "我毕业于"..self.school
+        "毕业于"..self.school
     }
     print(table.concat(info,"，"))
 end
+
+
+return Student

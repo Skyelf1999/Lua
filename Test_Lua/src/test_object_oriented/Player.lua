@@ -4,7 +4,10 @@
 --- DateTime: 2022/7/18 15:21
 ---
 
+
+-- 父类
 local Person = require("test_object_oriented.Person")
+
 
 -- 继承
 local Player = Person:new()
@@ -19,6 +22,7 @@ function Player:new(info)
     setmetatable(object,self)
     return object
 end
+
 
 -- 新方法
 function Player:playerIntroduce()
