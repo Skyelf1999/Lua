@@ -11,7 +11,7 @@ require("test_object_oriented.test_Account")
 
 ------------------------------- 私有性类定义 -------------------------------
 
--- 创建对象后，无法再直接访问balance
+-- 创建对象后，无法再直接访问balance，因为该成员是在创建对象时定义的
 function new_pAccount(balance)
     -- 保存类成员
     local self = {balance = balance}
