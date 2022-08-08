@@ -6,7 +6,7 @@
 ---
 
 
-module(...,package.seeall)
+module("complex_2",package.seeall)
 
 i = {r=0, i=1}
 

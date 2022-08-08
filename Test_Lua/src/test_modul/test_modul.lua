@@ -23,6 +23,8 @@ structure.Func_type("模块测试",true)
 structure.Func_type("使用环境的模块测试",true)
 
 require("test_modul.complex_2")
+-- complex_2中使用了module进行模块配置
+-- 因此可直接使用 模块名.方法 进行方法使用
 c_3 = complex_2.new(1,3)
 print(c_3)
 

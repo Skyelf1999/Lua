@@ -9,12 +9,12 @@ local useful = require("useful")
 
 local info = {age=18,name="dsh",game="DotA"}
 
-local new = {}
-for k,v in pairs(info) do
-    new[k] = v
+local function test(x,y)
+    if y==nil then
+        print("未传入参数y")
+    end
+    local data = x or {}
+    print(data,y)
 end
 
---info = nil
-for k,v in pairs(new) do
-    print(k,v)
-end
+test(10)
