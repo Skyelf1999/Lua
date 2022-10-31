@@ -136,29 +136,5 @@ return {
 --print("输出完毕")
 
 
--- 子模块结构
-local _sub_modules={
-    -- 商店按钮
-    {name="shop", tag=_ksTagShop, pos_x=20, pos_y=0},
-    {name="recycle", tag=_ksTagRecycle, pos_x=120, pos_y=0},
-    -- {name="shenshou", tag=_ksTagMagicPet, pos_x=120, pos_y=0},
-    -- {name="godweapon", tag=_ksTagGodWeapon, pos_x=110, pos_y=0},
-    {name="guild", tag=_ksTagArmyTeam, pos_x=225, pos_y=0},
-    {name="pet", tag=_ksTagPet, pos_x=330, pos_y=0},
-    -- {name="seal", tag=_ksSeal, pos_x=430, pos_y=0},
-    -- 武将列传
-    {name="bio", tag=_ksTagBio, pos_x=430, pos_y=0},
-    --宝石
-    -- {name="stone", tag=_ksTagStone, pos_x=430, pos_y=0},
-    {name="menu", tag=0, pos_x=530, pos_y=0},
 
-    -- 第二栏数据
-    {name="fair", tag=_ksTagFair, pos_x=20, pos_y= 0 },
-    {name="hero", tag=_ksTagHero, pos_x=120, pos_y= 0},
-    {name="replacehero", tag=_ksTagHeroRepl, pos_x=225, pos_y=0},
-    {name="horoscope", tag=_ksTagHoroscope, pos_x=330, pos_y=0},
-    -- added by zhz 天命
-    {name="destiny", tag=_ksTagDestiny, pos_x=420, pos_y=0},
-    -- add by licong 战魂
-    {name="fightSoul", tag=_ksTagFightSoul, pos_x=530, pos_y=0},
-}
+name = "dsh"

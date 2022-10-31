@@ -7,14 +7,39 @@
 
 local useful = require("useful")
 
-local info = {age=18,name="dsh",game="DotA"}
+--local function test(x,y)
+--    if y==nil then
+--        print("未传入参数y")
+--    end
+--    local data = x or {}
+--    print(data,y)
+--end
+--
 
-local function test(x,y)
-    if y==nil then
-        print("未传入参数y")
+local function isNil(data)
+    if data==nil then
+        print(true)
+    else
+        print(false)
     end
-    local data = x or {}
-    print(data,y)
 end
 
-test(10)
+local data = {}
+local buff = {4,8,9}
+table.insert(data,2,{3,4})
+table.insert(data,4,{1,2,3,6})
+table.insert(data,3,buff)
+data.xx = {}
+buff = {}
+
+for type,data in pairs(data) do
+    print(type)
+    for _,v in ipairs(data) do
+        print("\t"..v)
+    end
+end
+
+
+print(data)
+
+

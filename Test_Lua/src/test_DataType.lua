@@ -4,10 +4,6 @@
 --- DateTime: 2022/4/21 15:10
 ---
 
---[[
-    s
-]]
-
 print(type(nil  ))
 print(type(true))
 

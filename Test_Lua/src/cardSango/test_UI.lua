@@ -11,4 +11,4 @@ local data = require("cardSango.data_UI")
 --for i=1,9 do
 --    print(i, data.Content.Content.ObjectData.Children[i].Name)
 --end
-utils:printTable(data.Content.Content.ObjectData.Children[9],1,nil)
+utils:printTable(data.Content.Content.ObjectData.Children,1,"Name")

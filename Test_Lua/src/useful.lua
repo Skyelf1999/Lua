@@ -6,12 +6,20 @@
 
 local useful = {}
 
+useful.testData = {}
+useful.testData.x = 10
+function useful:getTestData()
+    return self.testData
+end
 
 --@t table
 --@level 当前嵌套级别
 function useful:printTable(t,level,target)
     local prefix = ""
     local islocked = false      -- 输出锁定
+    if level==nil then
+        level = 1
+    end
     prefix = "<"..level..">："
     for i=1,level do
         prefix = "\t"..prefix

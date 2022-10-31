@@ -17,8 +17,12 @@ function Utils:printTable(t,level,target)
     end
     for i,data in pairs(t) do
         -- 若非目标字段，锁定输出
-        if target~=nil and data~=target then
-            islocked = true
+        if target~=nil then
+            if tostring(i)~=target then
+                islocked = true
+            else
+                islocked = false
+            end
         end
         local type = type(data)
         if type=="function" and not islocked then
@@ -27,10 +31,10 @@ function Utils:printTable(t,level,target)
             print(prefix,i,"nil")
         elseif type=="table" then
             if islocked then
-                self:printTable(data,level+1,nil)
+                self:printTable(data,level+1,target)
             else
                 print(prefix,i,"("..type..")")
-                self:printTable(data,level+1,nil)
+                self:printTable(data,level+1,target)
             end
         elseif not islocked then
             print(prefix,i,data,"("..type..")")

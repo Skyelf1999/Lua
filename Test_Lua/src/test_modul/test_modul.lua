@@ -30,3 +30,6 @@ print(c_3)
 
 structure.Func_type("使用环境的模块测试",false)
 ------------------------------- 使用环境的模块测试 -------------------------------
+
+require("test_modul.dataFile")
+print(dataFile.getName())
