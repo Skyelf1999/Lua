@@ -24,22 +24,33 @@ local function isNil(data)
     end
 end
 
-local data = {}
-local buff = {4,8,9}
-table.insert(data,2,{3,4})
-table.insert(data,4,{1,2,3,6})
-table.insert(data,3,buff)
-data.xx = {}
-buff = {}
+--local data = {}
+--local buff = {4,8,9}
+--table.insert(data,2,{3,4})
+--table.insert(data,4,{1,2,3,6})
+--table.insert(data,3,buff)
+--data.xx = {}
+--buff = {}
 
-for type,data in pairs(data) do
-    print(type)
-    for _,v in ipairs(data) do
-        print("\t"..v)
+local function printParams(...)
+    local params = {...}
+    for i=1,#params do
+        print(params[i])
     end
 end
 
+printParams(10,"你好")
 
-print(data)
+local datas = {}
+for i=1,5 do
+    local enum = {index=i,data=i*10}
+    table.insert(datas,enum)
+    datas[#datas].data = i*10+1
+    print(enum.data)
+end
+--useful:printTable(datas)
+
+
+
 
 

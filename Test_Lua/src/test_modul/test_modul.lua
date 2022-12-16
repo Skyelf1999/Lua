@@ -5,11 +5,11 @@
 ---
 
 require("structure")
-require("test_modul.complex")
 
 ------------------------------- 模块测试 -------------------------------
 structure.Func_type("模块测试",true)
 
+require("test_modul.complex")
 c_1 = complex.new(1,1)
 c_2 = complex.new(1,-1)
 --print(complex.i.r,complex.i.i)
@@ -32,4 +32,7 @@ structure.Func_type("使用环境的模块测试",false)
 ------------------------------- 使用环境的模块测试 -------------------------------
 
 require("test_modul.dataFile")
+dataFile.setName("哈哈哈啊")
 print(dataFile.getName())
+dataFile.getUtil():test()
+dataFile.getUtil():test()

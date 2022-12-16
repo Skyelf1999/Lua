@@ -7,7 +7,24 @@
 module("dataFile",package.seeall)
 
 local name = "dsh"
+local util = {a=1,b=2}
 
 function getName()
     return name
+end
+function setName(newName)
+    name = newName
+end
+function getUtil()
+    return util
+end
+
+function test()
+    print("function")
+end
+
+function util:test()
+    print(string.format("a=%d, b=%d",self.a,self.b))
+    self.a = self.a+1
+    self.b = self.b+1
 end

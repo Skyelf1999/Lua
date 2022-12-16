@@ -11,3 +11,5 @@ print(type(input))
 
 t = {name="dsh", ["age"]=23}
 print(t.age)
+print(t.name)
+
