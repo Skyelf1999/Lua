@@ -23,7 +23,7 @@ Func_type("子类继承",true)
 local Player = require("test_object_oriented.Player")
 local info = {name="dsh",ismale=true,age=22,game= { "MHR","DotA","TitanFall" },school="北京科技大学"}
 local player_dsh = Player:new(info)
-player_dsh:print("game")
+player_dsh:print("age")
 player_dsh:playerIntroduce()
 
 Func_type("子类继承",false)

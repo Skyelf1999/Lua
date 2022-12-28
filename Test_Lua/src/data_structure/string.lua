@@ -9,3 +9,5 @@ print(string.sub(a,3,4))
 b = "\t".."\t"..a
 x = 10
 print("\t"..x,"xxx","Hello")
+local c = string.gsub(a,"234","ABC")
+print(c)

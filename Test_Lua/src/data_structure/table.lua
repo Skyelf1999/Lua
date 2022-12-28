@@ -5,6 +5,7 @@
 ---
 
 require("structure")
+require("useful")
 
 ------------------------------- 定义测试 -------------------------------
 structure.Func_type("table定义测试",true)
@@ -12,69 +13,82 @@ structure.Func_type("table定义测试",true)
 t0 = {}
 t_string = {"de","da","c"}
 t_int = {2,3,6,5,1,4}
-t_hash = {[2]=199, ["我"]="狄仕豪",["你"]="什么",["他"]="哈哈哈",game = "dota"}
-t_hash_2 = {name="dsh", age=23,["我"]="狄仕豪"}
+t_hash = {[2]=199, ["我"]="狄仕豪",[3]="哈哈哈",[5]=true,game = "dota",[1]=9,0,100}
 
-function table_show(t)
-    for i,v in pairs(t) do
-        print(i,v)
-    end
+for i,v in ipairs(t_hash) do
+    print(i,v)
 end
-table_show(t_hash)
-
-print(t_hash.game)
+for i,v in pairs(t_hash) do
+    print(i,v)
+end
 
 structure.Func_type("table定义测试",false)
 ------------------------------- 定义测试 -------------------------------
 
 
-------------------------------- 输出嵌套table -------------------------------
-structure.Func_type("输出嵌套table",true)
+------------------------------- table操作 -------------------------------
+structure.Func_type("table操作",true)
 
-function printTable(t,level)
-    local prefix = "- "
-    for i=1,level do
-        prefix = "\t"..prefix
-    end
-    for i,data in pairs(t) do
-        local type = type(data)
-        if type=="function" then
-            print(prefix..i,"这是一个函数")
-        elseif type==nil then
-            print(prefix..i,"nil")
-        elseif type=="table" then
-            print(prefix..i)
-            printTable(data,level+1)
-        else
-            print(prefix..i,data)
-        end
+local data = {}
+local buff = {4,8,9}
+table.insert(data,2,{3,4})
+table.insert(data,4,"测试插入")
+table.insert(data,3,buff)
+data.xx = {}
+buff = nil
+useful.printTable(data)
+
+
+
+------------------------------- table引用特性 -------------------------------
+structure.Func_type("引用特性",true)
+
+local x = "测试数据1"
+local tb = {"谁",true,1900}
+table.insert(tb,x)
+x = "测试数据2"         -- 字符串无引用特性，不会修改tb
+useful.printTable(tb)
+print()
+x = {1,2,3}
+table.insert(tb,x)
+x[3] = 100
+useful.printTable(tb)
+print()
+
+print(x)
+x = {}
+print(x)
+useful.printTable(tb)
+
+
+
+------------------------------- table动态定义 -------------------------------
+structure.Func_type("动态定义",true)
+local datas = {}
+local buff
+local temp
+for i=1,5 do
+    buff = {}
+    buff.index = i
+    buff.data = i*10
+    table.insert(datas,buff)
+    if i==3 then
+        buff.data = i*10+5
+        temp = buff
     end
 end
+temp.data = 0
+useful.printTable(datas)
+--useful.printTable(datas)
 
-local test = {
-    name = "dsh",
-    games = {"dota","MHR","Re2"},
-    gender = true,
-    account = {
-        { "skyelfxxx@126.com","code1" },
-        { "1456@qq.com","code2"}
-    }
-}
-
-printTable(test,1)
-
-structure.Func_type("输出嵌套table",false)
-------------------------------- 输出嵌套table -------------------------------
-
-
-
-
-
-
-
-
-
-
+------------------------------- table动态删除 -------------------------------
+structure.Func_type("动态定义",true)
+for i=1,#datas do
+    if i>2 and i<5 then
+        table.remove(datas,i)
+    end
+end
+useful.printTable(datas)
 
 
 

@@ -4,22 +4,20 @@
 --- DateTime: 2022/7/4 11:26
 ---
 
-local useful = {}
+module("useful",package.seeall)
 
-useful.testData = {}
-useful.testData.x = 10
-function useful:getTestData()
-    return self.testData
+local testData = {}
+testData.x = 10
+function getTestData()
+    return testData.x
 end
 
 --@t table
 --@level 当前嵌套级别
-function useful:printTable(t,level,target)
+function printTable(t,level,target)
     local prefix = ""
     local islocked = false      -- 输出锁定
-    if level==nil then
-        level = 1
-    end
+    local level = level or 1
     prefix = "<"..level..">："
     for i=1,level do
         prefix = "\t"..prefix
@@ -36,15 +34,13 @@ function useful:printTable(t,level,target)
             print(prefix,i,"nil")
         elseif type=="table" then
             if islocked then
-                self:printTable(data,level+1,nil)
+                printTable(data,level+1,nil)
             else
                 print(prefix,i,"("..type..")")
-                self:printTable(data,level+1,nil)
+                printTable(data,level+1,nil)
             end
         elseif not islocked then
             print(prefix,i,data,"("..type..")")
         end
     end
 end
-
-return useful

@@ -6,51 +6,24 @@
 
 
 local useful = require("useful")
+require("Game")
 
---local function test(x,y)
---    if y==nil then
---        print("未传入参数y")
+
+--local datas = {"s",1999,true,game="DotA",name="dsh"}
+--local mt = {}
+--mt.__index = function (tb,index)
+--    for k,v in pairs(tb) do
+--        print(k,v)
 --    end
---    local data = x or {}
---    print(data,y)
+--    print(string.format("[%s] 不存在",tostring(index)))
 --end
---
+--setmetatable(datas,mt)
+--print(datas[9])
 
-local function isNil(data)
-    if data==nil then
-        print(true)
-    else
-        print(false)
-    end
-end
-
---local data = {}
---local buff = {4,8,9}
---table.insert(data,2,{3,4})
---table.insert(data,4,{1,2,3,6})
---table.insert(data,3,buff)
---data.xx = {}
---buff = {}
-
-local function printParams(...)
-    local params = {...}
-    for i=1,#params do
-        print(params[i])
-    end
-end
-
-printParams(10,"你好")
-
-local datas = {}
-for i=1,5 do
-    local enum = {index=i,data=i*10}
-    table.insert(datas,enum)
-    datas[#datas].data = i*10+1
-    print(enum.data)
-end
---useful:printTable(datas)
-
-
-
+local game1 = Game.create("DotA","DotA-Like")
+game1:printInfo()
+local game2 = Game.create("SC","RTS")
+game1:printInfo()
+game2:printInfo()
 
 
