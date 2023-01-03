@@ -9,12 +9,16 @@ module("Game",package.seeall)
 local _game = {}
 _game.name = "游戏"
 _game.type = "类型"
+_game.metaData = 1
 _game.__index = _game
 
 function create(...)
     local info = {...}
-    setmetatable(info,_game)
-    return info
+    local new = {}
+    new.name = info[1]
+    new.type = info[2]
+    setmetatable(new,_game)
+    return new
 end
 
 function _game:printInfo()

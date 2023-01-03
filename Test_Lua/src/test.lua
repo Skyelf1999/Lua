@@ -9,7 +9,7 @@ local useful = require("useful")
 require("Game")
 
 
---local datas = {"s",1999,true,game="DotA",name="dsh"}
+local datas = {"s",1999,true,game="DotA",name="dsh"}
 --local mt = {}
 --mt.__index = function (tb,index)
 --    for k,v in pairs(tb) do
@@ -21,9 +21,10 @@ require("Game")
 --print(datas[9])
 
 local game1 = Game.create("DotA","DotA-Like")
-game1:printInfo()
+--game1:printInfo()
 local game2 = Game.create("SC","RTS")
 game1:printInfo()
 game2:printInfo()
+print(game2.metaData)
 
 
