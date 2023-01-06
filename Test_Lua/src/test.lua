@@ -20,11 +20,12 @@ local datas = {"s",1999,true,game="DotA",name="dsh"}
 --setmetatable(datas,mt)
 --print(datas[9])
 
-local game1 = Game.create("DotA","DotA-Like")
+--local game1 = Game.create("DotA","DotA-Like")
+----game1:printInfo()
+--local game2 = Game.create("SC","RTS")
 --game1:printInfo()
-local game2 = Game.create("SC","RTS")
-game1:printInfo()
-game2:printInfo()
-print(game2.metaData)
+--game2:printInfo()
+--print(game2.metaData)
 
-
+local x,y = 1,2
+print(x,y)
