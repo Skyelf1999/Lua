@@ -27,5 +27,9 @@ local datas = {"s",1999,true,game="DotA",name="dsh"}
 --game2:printInfo()
 --print(game2.metaData)
 
-local x,y = 1,2
-print(x,y)
+local arr = {}
+arr["bullet_1"] = "a"
+arr["bullet_2"] = true
+arr["bullet_22"] = 999
+local x = "bullet_2"
+print(arr[x])
