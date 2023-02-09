@@ -34,7 +34,9 @@ arr["bullet_22"] = 999
 arr.test = function()
     print("text")
 end
+arr[2] = "b"
 
-for k,v in pairs(arr) do
-    print(type(k),type(v))
-end
+--for k,v in pairs(arr) do
+--    print(type(k),type(v))
+--end
+print(#arr)
