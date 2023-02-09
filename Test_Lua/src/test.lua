@@ -28,8 +28,13 @@ local datas = {"s",1999,true,game="DotA",name="dsh"}
 --print(game2.metaData)
 
 local arr = {}
-arr["bullet_1"] = "a"
+arr[1] = "a"
 arr["bullet_2"] = true
 arr["bullet_22"] = 999
-local x = "bullet_2"
-print(arr[x])
+arr.test = function()
+    print("text")
+end
+
+for k,v in pairs(arr) do
+    print(type(k),type(v))
+end
