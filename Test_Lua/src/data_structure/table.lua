@@ -81,8 +81,10 @@ temp.data = 0
 useful.printTable(datas)
 --useful.printTable(datas)
 
+
 ------------------------------- table动态删除 -------------------------------
-structure.Func_type("动态定义",true)
+structure.Func_type("动态删除",true)
+-- 正向遍历删除会影响table长度和内容，因此建议反向遍历删除
 for i=1,#datas do
     if i>2 and i<5 then
         table.remove(datas,i)
@@ -91,6 +93,36 @@ end
 useful.printTable(datas)
 
 
+------------------------------- table排序 -------------------------------
+structure.Func_type("排序",true)
+-- 正向遍历删除会影响table长度和内容，因此建议反向遍历删除
+local file = {}
+file[1] = {["name"]="dsh" , ["age"]=24}
+file[2] = {["name"]="zdd" , ["age"]=23}
+file[9] = {["name"]="htm" , ["age"]=21}
+file[4] = {["name"]="zrq" , ["age"]=23}
+
+--local function cmp(x,y)
+--    return x.age>=y.age
+--end
+--table.sort(file,cmp)
+useful.printTable(file)
+
+
+--------------------------------- table动态插入 -------------------------------
+structure.Func_type("动态插入",true)
+-- 正向遍历删除会影响table长度和内容，因此建议反向遍历删除
+local file_copy = {}
+file_copy[2] = {["name"]="zdd" , ["age"]=23}
+file_copy[4] = {["name"]="zrq" , ["age"]=23}
+
+for k,v in pairs(file) do
+    if(file_copy[k]==nil) then
+        print("没有"..k)
+        file_copy[k] = v
+    end
+end
+useful.printTable(file_copy)
 
 
 

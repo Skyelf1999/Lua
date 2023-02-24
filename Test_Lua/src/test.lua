@@ -39,4 +39,4 @@ arr[2] = "b"
 --for k,v in pairs(arr) do
 --    print(type(k),type(v))
 --end
-print(#arr)
+print(arr[3])
