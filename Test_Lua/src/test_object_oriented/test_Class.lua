@@ -41,5 +41,15 @@ employee_dsh:employeeIntroduce()
 
 Func_type("多重继承",false)
 
+-------------------------------------------------------------------
+
+
+Func_type("class构造",true)
+
+require("test_object_oriented.Bag")
+local bagA = Bag:new("A")
+
+
+
 
 
